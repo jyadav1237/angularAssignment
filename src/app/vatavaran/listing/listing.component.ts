@@ -19,7 +19,7 @@ export class ListingComponent implements OnInit {
   }
 
   //CALLING API TO GET DATA FOR ENTERED LOCATION AND EMITTING FOR DETAILS COMP.
-  onAddressChange(e) {
+  onAddressChange() {
     this.getEnteredLocationInfo(this.addressInput);
   }
 

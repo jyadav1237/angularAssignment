@@ -1,7 +1,10 @@
 <div class="left-sidebar">
-    <input type="text" class="form-control" placeholder="Type city name" [(ngModel)]="addressInput"
-        (change)="onAddressChange($event)" />
-
+    <div class="form-group search-form position-relative ">
+        <input type="text" class="form-control" placeholder="Type city name" [(ngModel)]="addressInput"
+        (change)="onAddressChange()" />
+        <img class="position-absolute" src="assets/images/search.svg" width="20px" (click)="onAddressChange()"/>
+    </div>
+    
     <h6 class="mt-4">Recent locations</h6>
     <ul>
         <li *ngFor="let loc of recentLocations; let i = index">
