@@ -1,0 +1,53 @@
+.details-wrapper{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding-left: 30px;
+    padding-top: 30px;
+    .selection-details {
+        width: 100%;
+    
+        .weather-header-details {
+            display: flex;
+            column-gap: 30px;
+            align-items: center;
+    
+            .weather-icon {
+                background-color: #f4f5f5;
+    
+                img {
+                    width: 200px;
+                }
+            }
+        }
+    
+        .forecasts {
+            display: flex;
+            column-gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+    
+            .forecast-content {
+                width: 100px;
+                text-align: center;
+                margin-bottom: 20px;
+                background: #f4f5f5;
+                padding: 10px;
+                border-radius: 6px;
+    
+                .date {}
+    
+                .icon {
+                    img {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .noDataMessage{
+        h3{
+            
+        }
+    }
+}

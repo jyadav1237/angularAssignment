@@ -1,0 +1,16 @@
+<div class="left-sidebar">
+    <input type="text" class="form-control" placeholder="Type city name" [(ngModel)]="addressInput"
+        (change)="onAddressChange($event)" />
+
+    <h6 class="mt-4">Recent locations</h6>
+    <ul>
+        <li *ngFor="let loc of recentLocations; let i = index">
+            {{loc.name}} <small><b>{{getTemperature(loc.data.list[0].main.temp)}}</b></small> <small><b>{{loc.data.list[0].weather[0].main}}</b></small>
+            <img src="assets/images/trash.svg" width="24px" (click)="onRemoveRecentLoc(loc, i)" />
+        </li>
+    </ul>
+
+    <div class="footer-actions">
+        <button class="btn btn-primary btn-sm" (click)="onClearRecentLoc()">Clear</button>
+    </div>
+</div>

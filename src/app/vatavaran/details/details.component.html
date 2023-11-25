@@ -1,0 +1,34 @@
+<div class="details-wrapper">
+    <div class="selection-details" *ngIf="weatherData else noDataMessage">
+        <h3>{{detailInfo.city.name}}</h3>
+    
+        <div class="weather-header-details">
+            <div class="weather-icon">
+                <img [src]="getWeatherIcon()" alt="">
+            </div>
+            <div class="current-details">
+                <p>{{getTemperature(weatherData.main.temp)}}</p>
+                <p>{{weatherData.weather[0].description}}</p>
+                <p><b>Wind:</b> {{weatherData.wind.speed}}ms {{weatherData.wind.deg}}deg</p>
+                <p><b>Pressure:</b> {{weatherData.main.pressure}}</p>
+            </div>
+        </div>
+    
+        <div class="forecasts" *ngIf="sortedForecastData.length">
+            <div class="forecast-content" *ngFor="let data of sortedForecastData">
+                <div class="date">{{getDate(data.dt_txt)}}</div>
+                <div class="icon">
+                    <img [src]="getWeatherIcon()" alt="weather">
+                </div>
+                <div class="">{{getTemperature(data.main.temp)}}</div>
+            </div>
+        </div>
+    </div>
+    
+    <ng-template #noDataMessage>
+        <div class="noDataMessage">
+            <h4>Please search any location to get info</h4>
+            <p class="text-left mt-3" *ngIf="loading">Loading...</p>
+        </div>
+    </ng-template>
+</div>
